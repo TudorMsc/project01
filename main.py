@@ -1,7 +1,21 @@
+import random
+level = 1
+boss = 100
+player = 100
+def bosat():
+    global player
+    player = player - 10
+
 def attack():
-    atpow = 20
-    level*rand(0, 1)
+    global boss
+    atpow = 40
+    atacdmg = level*atpow*random.uniform(0, 2)
+    boss = boss - atacdmg
 
 def heal():
-    hpow = 20
-    level*rand(0, 1)
+    global player
+    hpow = 40
+    heal = level*hpow*random.uniform(0, 2)
+    player = player + heal
+    if player > 100:
+        player = 100
