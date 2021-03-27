@@ -1,83 +1,85 @@
-from os import system, name
-from time import sleep
-import random
-level = 1
-boss = 10
-player = 100
+student@ACAD06 MINGW64 ~/Desktop
+$ mkdir project
+
+student@ACAD06 MINGW64 ~/Desktop
+$ cd project
+
+student@ACAD06 MINGW64 ~/Desktop/project
+$ git init
+Initialized empty Git repository in C:/Users/student/Desktop/project/.git/
+t
+student@ACAD06 MINGW64 ~/Desktop/project (master)
+$ touch main.py
+
+student@ACAD06 MINGW64 ~/Desktop/project (master)
+$ ls
+main.py
+
+student@ACAD06 MINGW64 ~/Desktop/project (master)
+$ git add main.py
+
+student@ACAD06 MINGW64 ~/Desktop/project (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   main.py
 
 
-def bosat():
-    global player
-    player = player - 10
+student@ACAD06 MINGW64 ~/Desktop/project (master)
+$ git commit -m "New commit"
+[master (root-commit) b802136] New commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 main.py
 
-def attack():
-    global boss
-#    atpow = 40
-    atacdmg = level * random.uniform(0, 2)
-    boss = boss - atacdmg
+student@ACAD06 MINGW64 ~/Desktop/project (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
 
+student@ACAD06 MINGW64 ~/Desktop/project (master)
+$
 
-def heal():
-    global player
-#    hpow = 40
-    heal = level * random.uniform(0, 2)
-    player = player + heal
-    if player > 100:
-        player = 100
+student@ACAD06 MINGW64 ~/Desktop/project (master)
+$
 
-def clear():
-    if name == 'nt': 
-        _ = system('cls') 
+student@ACAD06 MINGW64 ~/Desktop/project (master)
+$ git remote add origin https://github.com/TudorMsc/TudorMsc.git
 
-def main():
-    while True:
-        global player
-        clear()
-        print("Salut! Misiunea ta este sa bati Boss-ul. Amandoi aveti 100HP.",
-        "\nTu ai doua abilitati pe care le poti folosi, adica Heal si Attack")
+student@ACAD06 MINGW64 ~/Desktop/project (master)
+$ git push -u origin main
+error: src refspec main does not match any.
+error: failed to push some refs to 'https://github.com/TudorMsc/TudorMsc.git'
 
-        while( boss > 0 or player > 0):
-            print(f'Ai {player} HP. ')
-            print(f'Boss-ul are {boss} HP. ')
-            alegimare = input("Ce alegi? Heal, Attack sau Quit (H / A / Q) ")
-            alegi = alegimare.lower()
+student@ACAD06 MINGW64 ~/Desktop/project (master)
+$ git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
 
-            if alegi == "h":
-                heal()
-                clear()
-            elif alegi == "a":
-                attack()
-                bosat()
-                clear()
-            elif alegi == 'q':
-                print('Game Over')
-                sleep(1)
-                clear()
-                return
-            else:
-                print("Trebuie sa alegi intre H si A")
-                sleep(1)
-                clear()
-            
-            if player <= 0 and boss <= 0:
-                print("Ai omorat boss-ul, dar cu pretul vietii tale.")
-                sleep(2)
-                clear()
-                return
-
-            elif boss <= 0:
-                print("Ai invins boss-ul, felicitari! ;) ")
-                sleep(2)
-                clear()
-                return
-
-            elif player <= 0:
-                print("Ai fost invins, mai incearca. ")
-                sleep(2)
-                clear()
-                return
-                
+    git push --set-upstream origin master
 
 
-if __name__ == '__main__':
-    main()
+student@ACAD06 MINGW64 ~/Desktop/project (master)
+$ ^C
+
+student@ACAD06 MINGW64 ~/Desktop/project (master)
+$ ^C
+
+student@ACAD06 MINGW64 ~/Desktop/project (master)
+$ git push --set-upstream origin master
+Logon failed, use ctrl+c to cancel basic credential prompt.
+Username for 'https://github.com': TudorMsc
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 208 bytes | 208.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/TudorMsc/TudorMsc.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+student@ACAD06 MINGW64 ~/Desktop/project (master)
+$ python
